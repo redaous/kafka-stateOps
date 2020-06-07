@@ -1,0 +1,7 @@
+topics:
+  my-example-topic:
+    partitions: 6
+    replication: 1
+    configs:
+      cleanup.policy: compact
+
