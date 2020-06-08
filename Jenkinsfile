@@ -1,34 +1,19 @@
-pipeline{
+pipeline {
   agent any
- stages {
-    
-    stage ("Validate" ){ 
-       steps {
-       
-         echo "one"
-       
-       }  
-    
+  stages {
+  stage('Stage 1') {
+      steps {
+        script {
+          echo 'Stage 1'
+        }
+      }
     }
-    stage ("plan" ){
-       steps {
-
-         echo "one"
-
-       }
-
+  stage('Stage 2') {
+      steps {
+        script {
+          echo 'Stage 2'
+        }
+      }
     }
-    stage ("apply" ){
-       steps {
-
-         echo "one"
-
-       }
-
-    }
-
-
-   
   }
-
 }
