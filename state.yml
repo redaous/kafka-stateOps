@@ -1,5 +1,5 @@
 topics:
-  my-example-topic:
+  my-topic:
     partitions: 6
     replication: 1
     configs:
