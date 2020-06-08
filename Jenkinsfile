@@ -1,22 +1,21 @@
 pipeline {
   agent any
+
   stages {
-  stage('Stage 1') {
+    stage("One") {
       steps {
-        script {
-          echo 'Stage 1'
-        }
+        echo "Hello"
       }
     }
-    
-    if (env.BRANCH_NAME == 'master') { 
-             stage('Stage 2') {
-                 steps {
-                  script {
-                    echo 'Stage 2'
-                  }
-                 }
-                 }
+    stage("Evaluate Master") {
+      when {
+        // skip this stage unless on Master branch
+        branch "master"
+      }
+      steps {
+        echo "World"
+        echo "Heal it"
+      }
     }
   }
 }
