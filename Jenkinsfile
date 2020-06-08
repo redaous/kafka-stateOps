@@ -8,12 +8,15 @@ pipeline {
         }
       }
     }
-  stage('Stage 2') {
-      steps {
-        script {
-          echo 'Stage 2'
-        }
-      }
+    
+    if (env.BRANCH_NAME == 'master') { 
+             stage('Stage 2') {
+                 steps {
+                  script {
+                    echo 'Stage 2'
+                  }
+                 }
+                 }
     }
   }
 }
